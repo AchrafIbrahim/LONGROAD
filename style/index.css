@@ -241,6 +241,56 @@ body.menu-open {
   visibility: visible;
 }
 
+.navbar-search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  gap: 8px;
+}
+
+.navbar-input-search {
+  width: 0;
+  padding: 0;
+  border: none;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.navbar-search-container.active .navbar-input-search {
+  width: 200px;
+  padding: 8px 16px;
+  opacity: 1;
+  visibility: visible;
+  border: 1px solid #ddd;
+}
+
+.navbar-search {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  color: #231f20;
+  transition: color 0.2s ease;
+}
+
+.navbar-search:hover {
+  color: #a4a4a4;
+}
+
+#navbar.search-active .navbar-smalllogo {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
 /*=========== MAIN PROJECT ===========*/
 main {
   display: flex;
