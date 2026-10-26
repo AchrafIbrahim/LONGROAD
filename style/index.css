@@ -296,11 +296,19 @@ main {
 }
 
 .projects-card-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 10px;
   border: 2px solid #231f20;
   border-radius: 10px;
   background-color: #ffffff;
+}
+
+.projects-card-img-container img {
+  display: flex;
+  align-items: center;
 }
 
 .projects-card-desc {
