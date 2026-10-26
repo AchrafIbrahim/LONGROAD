@@ -149,6 +149,9 @@ footer {
   transform: translateX(-50%);
   display: flex;
   align-items: center;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .navbar-smalllogo img {
@@ -465,6 +468,5 @@ footer {
   #navbar.search-active .navbar-smalllogo {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease;
   }
 }
