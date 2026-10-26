@@ -67,4 +67,12 @@ footer {
   margin: 0;
   padding: 0;
 }
-/**/
+
+/*=========== NAVBAR ===========*/
+.navbar {
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
