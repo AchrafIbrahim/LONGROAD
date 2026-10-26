@@ -79,6 +79,14 @@ footer {
 }
 
 /*=========== NAVBAR ===========*/
+.navbar-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #ffffff;
+  width: 100%;
+}
+
 .navbar {
   padding: 10px 0px 10px 0px;
   height: 58px;
@@ -191,4 +199,30 @@ body.menu-open {
 .menuOverlay.is-open {
   opacity: 1;
   visibility: visible;
+}
+
+/*=========== MAIN PROJECT ===========*/
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-container {
+  max-width: 750px;
+  width: 100%;
+  padding: 50px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  text-align: justify;
 }
