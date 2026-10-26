@@ -306,11 +306,6 @@ main {
   background-color: #ffffff;
 }
 
-.projects-card-img-container img {
-  display: flex;
-  align-items: center;
-}
-
 .projects-card-desc {
   width: 100%;
   display: flex;
