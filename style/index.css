@@ -285,9 +285,14 @@ main {
   align-items: flex-start;
   gap: 20px;
   padding: 40px 40px;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 1);
   border: 3px solid #f7b5cd;
   border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.projects-card:hover {
+  background-color: rgba(204, 203, 204, 0.5);
 }
 
 .projects-card-img-container {
@@ -295,6 +300,7 @@ main {
   padding: 10px;
   border: 2px solid #231f20;
   border-radius: 10px;
+  background-color: #ffffff;
 }
 
 .projects-card-desc {
