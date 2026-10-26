@@ -263,9 +263,9 @@ body.menu-open {
 .navbar-input-search {
   width: 0;
   padding: 0;
-  border: none;
+  border: 2px solid #cccbcc;
   background-color: #f3f3f3;
-  border-radius: 20px;
+  border-radius: 10px;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -279,7 +279,7 @@ body.menu-open {
   padding: 8px 16px;
   opacity: 1;
   visibility: visible;
-  border: 1px solid #ddd;
+  border: 2px solid #cccbcc;
 }
 
 .navbar-search {
