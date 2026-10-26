@@ -272,6 +272,7 @@ body.menu-open {
   font-family: inherit;
   font-size: 16px;
   outline: none;
+  font-family: "Inria Sans", sans-serif;
 }
 
 .navbar-search-container.active .navbar-input-search {
