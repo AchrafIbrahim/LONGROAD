@@ -459,6 +459,131 @@ footer {
   gap: 5px;
 }
 
+/*=========== PRIVACY POLICY MODAL ===========*/
+.modal {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 520px;
+  overflow: visible;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 40px;
+  border: 3px solid #231f20;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.modal-title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.modal-close:hover {
+  transform: scale(1.1) rotate(90deg);
+}
+
+.modal-body {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.modal-body p {
+  margin: 0;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal[open] {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.modal[open] .modal-content {
+  animation: slideUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.modal[closing] {
+  animation: fadeOut 0.2s ease forwards;
+}
+
+.modal[closing] .modal-content {
+  animation: slideDown 0.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(20px) scale(0.95);
+    opacity: 0;
+  }
+}
+
 /*=========== RESPONSIVE ===========*/
 @media (max-width: 768px) {
   .navbar-search-container.active .navbar-input-search {
