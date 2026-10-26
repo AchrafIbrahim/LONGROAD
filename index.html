@@ -15,9 +15,11 @@
     <title>Home</title>
   </head>
   <body>
+    <!-- ================ NAVBAR ================ -->
     <header>
       <nav class="navbar">
-        <button>
+        <!-- ================ NAV HAMBURGER ================ -->
+        <button class="navbar-hamburger" id="navbar-hamburger-btn" aria-label="navbar-hamburger-open">
           <svg width="30" height="22" viewBox="0 0 30 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_92_159)">
               <path
@@ -32,7 +34,103 @@
             </defs>
           </svg>
         </button>
+
+        <!-- ================ LONGROAD LOGO ================ -->
+        <a class="navbar-smalllogo" href="/index.html" aria-label="Back to home">
+          <img class="navbar-smalllogo-img" src="/img/SmallLogo.svg" alt="LongRoad" />
+        </a>
+
+        <!-- ================ SEARCH ================ -->
+        <button class="navbar-search" id="navbar-search" aria-label="navbar-search-open">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M28 28L20 20M4 13.3333C4 14.559 4.24141 15.7727 4.71046 16.905C5.1795 18.0374 5.86699 19.0663 6.73367 19.933C7.60035 20.7997 8.62925 21.4872 9.76162 21.9562C10.894 22.4253 12.1077 22.6667 13.3333 22.6667C14.559 22.6667 15.7727 22.4253 16.905 21.9562C18.0374 21.4872 19.0663 20.7997 19.933 19.933C20.7997 19.0663 21.4872 18.0374 21.9562 16.905C22.4253 15.7727 22.6667 14.559 22.6667 13.3333C22.6667 12.1077 22.4253 10.894 21.9562 9.76162C21.4872 8.62925 20.7997 7.60035 19.933 6.73367C19.0663 5.86699 18.0374 5.1795 16.905 4.71046C15.7727 4.24141 14.559 4 13.3333 4C12.1077 4 10.894 4.24141 9.76162 4.71046C8.62925 5.1795 7.60035 5.86699 6.73367 6.73367C5.86699 7.60035 5.1795 8.62925 4.71046 9.76162C4.24141 10.894 4 12.1077 4 13.3333Z"
+              stroke-width="2.66667"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke="#231F20"
+            />
+          </svg>
+        </button>
       </nav>
     </header>
+
+    <main></main>
+
+    <!-- ================ SIDE NAVBAR ================ -->
+    <div class="menuOverlay" id="menuOverlay"></div>
+
+    <nav class="navbar-inner-sidenav" id="navbar-inner-sidenav" aria-label="Main-Navigation">
+      <button class="navbar-inner-sidenav-closebtn" id="navbar-inner-sidenav-closebtn">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M16.0001 18.3394L7.81214 26.5274C7.50579 26.8338 7.11588 26.9869 6.64243 26.9869C6.16897 26.9869 5.77907 26.8338 5.47271 26.5274C5.16636 26.2211 5.01318 25.8312 5.01318 25.3577C5.01318 24.8843 5.16636 24.4943 5.47271 24.188L13.6607 16L5.47271 7.81201C5.16636 7.50566 5.01318 7.11576 5.01318 6.6423C5.01318 6.16885 5.16636 5.77894 5.47271 5.47259C5.77907 5.16623 6.16897 5.01306 6.64243 5.01306C7.11588 5.01306 7.50579 5.16623 7.81214 5.47259L16.0001 13.6606L24.1881 5.47259C24.4945 5.16623 24.8844 5.01306 25.3578 5.01306C25.8313 5.01306 26.2212 5.16623 26.5275 5.47259C26.8339 5.77894 26.9871 6.16885 26.9871 6.6423C26.9871 7.11576 26.8339 7.50566 26.5275 7.81201L18.3396 16L26.5275 24.188C26.8339 24.4943 26.9871 24.8843 26.9871 25.3577C26.9871 25.8312 26.8339 26.2211 26.5275 26.5274C26.2212 26.8338 25.8313 26.9869 25.3578 26.9869C24.8844 26.9869 24.4945 26.8338 24.1881 26.5274L16.0001 18.3394Z"
+            fill="#231F20"
+          />
+        </svg>
+      </button>
+      <div class="navbar-inner-sidenav-list">
+        <div class="navbar-inner-sidenav-menu-item inria">
+          <a href="/index.html">
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20 42V20M20 42H37.2C38.473 42 39.6939 41.4943 40.5941 40.5941C41.4943 39.6939 42 38.473 42 37.2V20M20 42H10.8C9.52696 42 8.30606 41.4943 7.40589 40.5941C6.50571 39.6939 6 38.473 6 37.2V20M20 20V6M20 20H6M20 20H42M20 6H10.8C9.52696 6 8.30606 6.50571 7.40589 7.40589C6.96017 7.85161 6.6066 8.38076 6.36538 8.96312C6.12416 9.54548 6 10.1697 6 10.8V20M20 6H37.2C38.473 6 39.6939 6.50571 40.5941 7.40589C41.4943 8.30606 42 9.52696 42 10.8V20"
+                stroke-width="3"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke="black"
+              />
+            </svg>
+            Projects
+          </a>
+        </div>
+        <div class="navbar-inner-sidenav-menu-item inria">
+          <a href="/index.html">
+            <svg width="32" height="32" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 24H14L20 40L28 8.00002L34 24H42" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke="black" />
+            </svg>
+            Activity
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      // ================ OPEN SIDE NAVBAR ================
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburgerBtn = document.getElementById("navbar-hamburger-btn");
+        const closeBtn = document.querySelector(".navbar-inner-sidenav-closebtn");
+        const sidenav = document.getElementById("navbar-inner-sidenav");
+        const overlay = document.getElementById("menuOverlay");
+
+        function openMenu() {
+          sidenav.classList.add("is-open");
+          if (overlay) overlay.classList.add("is-open");
+          document.body.classList.add("menu-open");
+        }
+
+        function closeMenu() {
+          sidenav.classList.remove("is-open");
+          if (overlay) overlay.classList.remove("is-open");
+          document.body.classList.remove("menu-open");
+        }
+
+        // Close navbar when click outside
+        hamburgerBtn.addEventListener("click", openMenu);
+        closeBtn.addEventListener("click", closeMenu);
+
+        if (overlay) {
+          overlay.addEventListener("click", closeMenu);
+        }
+
+        // Close navbar when zoom out
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 1100) {
+            closeMenu();
+          }
+        });
+      });
+    </script>
   </body>
 </html>
