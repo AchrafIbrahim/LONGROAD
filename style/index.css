@@ -118,6 +118,42 @@ footer {
   background-color: #f4f3f3;
 }
 
+/*=========== LOGO ANIMATION ===========*/
+.road-motion {
+  animation: dash-up 0.65s linear infinite;
+}
+.road-small {
+  animation-name: dash-up-small;
+}
+.road-big {
+  animation-name: dash-up-big;
+}
+
+.small-logo .road-small {
+  animation-duration: 1.2s;
+}
+
+.big-logo .road-big {
+  animation-duration: 1.2s;
+}
+
+@keyframes dash-up-small {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 4.3309px;
+  }
+}
+@keyframes dash-up-big {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 28.8px;
+  }
+}
+
 /*=========== NAVBAR ===========*/
 .navbar-sticky {
   position: sticky;
