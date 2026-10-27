@@ -20,12 +20,14 @@
         theme: {
           extend: {
             colors: {
+              "brand-neutral": "#F4F3F3" /* WHITE */,
               "brand-secondary": "#231f20" /* BLACK */,
-              "brand-tertiary": "#CCCBCC" /* LIGHT GREY */,
+              "brand-forty": "#CCCBCC" /* LIGHT GREY */,
               "brand-primary": "#ffb6c1" /* PINK */,
+              "brand-tertiary": "#A4A4A4" /*GREY */,
             },
             fontFamily: {
-              inria: ["Inria Serif", "serif"],
+              inria: ['"Inria Sans"', "serif"],
               bungee: ["Bungee", "cursive"],
             },
           },
@@ -130,10 +132,72 @@
           <h1 class="font-bungee text-brand-secondary text-[32px]">CHANGELOG COMPONENT</h1>
           <p>
             A simple changelog component for website. A changelog is a log or record of all notable changes made to a project or software. It is often used to keep users informed about the latest updates and improvements. Made by HTML5 &
-            CSS Tailwind.
+            CSS Tailwind. The newest changelog is the pink one.
           </p>
         </header>
-        <section></section>
+        <section class="p-10 border-[2px] border-brand-secondary rounded-[10px]">
+          <div class="flex flex-col justify-start gap-6 max-w-lg font-inria text-[16px] text-brand-secondary">
+            <!-- ITEM 1  -->
+            <div class="flex flex-row items-center justify-start gap-5">
+              <span class="text-[10px] text-brand-tertiary w-[93px] text-right shrink-0">24 Oct 2026 20:35 PM</span>
+              <div class="relative flex justify-center items-center w-6 h-6 shrink-0">
+                <div class="absolute w-[2px] bg-brand-secondary top-1/2 -bottom-6 left-1/2 -translate-x-1/2 z-0"></div>
+                <div class="relative z-10 w-6 h-6 rounded-full border-[2px] border-brand-secondary bg-brand-neutral flex items-center justify-center shrink-0">
+                  <div class="w-[14px] h-[14px] rounded-full border-[2px] border-brand-secondary bg-brand-primary"></div>
+                </div>
+              </div>
+              <span>Add README.md file</span>
+            </div>
+
+            <!-- ITEM 2 -->
+            <div class="flex flex-row items-center justify-start gap-5">
+              <span class="text-[10px] text-brand-tertiary w-[93px] text-right shrink-0">24 Oct 2026 20:33 PM</span>
+              <div class="relative flex justify-center items-center w-6 h-6 shrink-0">
+                <div class="absolute w-[2px] bg-brand-secondary -top-6 -bottom-6 left-1/2 -translate-x-1/2 z-0"></div>
+                <div class="relative z-10 w-6 h-6 rounded-full border-[2px] border-brand-secondary bg-brand-neutral flex items-center justify-center shrink-0">
+                  <div class="w-[14px] h-[14px] rounded-full border-[2px] border-brand-secondary bg-brand-secondary"></div>
+                </div>
+              </div>
+              <span>change fontsize on sidenav</span>
+            </div>
+
+            <!-- ITEM 3 -->
+            <div class="flex flex-row items-center justify-start gap-5">
+              <span class="text-[10px] text-brand-tertiary w-[93px] text-right shrink-0">24 Oct 2026 20:31 PM</span>
+              <div class="relative flex justify-center items-center w-6 h-6 shrink-0">
+                <div class="absolute w-[2px] bg-brand-secondary -top-6 -bottom-6 left-1/2 -translate-x-1/2 z-0"></div>
+                <div class="relative z-10 w-6 h-6 rounded-full border-[2px] border-brand-secondary bg-brand-neutral flex items-center justify-center shrink-0">
+                  <div class="w-[14px] h-[14px] rounded-full border-[2px] border-brand-secondary bg-brand-secondary"></div>
+                </div>
+              </div>
+              <span>add css main-mindset-list-item</span>
+            </div>
+
+            <!-- ITEM 4 -->
+            <div class="flex flex-row items-center justify-start gap-5">
+              <span class="text-[10px] text-brand-tertiary w-[93px] text-right shrink-0">24 Oct 2026 20:29 PM</span>
+              <div class="relative flex justify-center items-center w-6 h-6 shrink-0">
+                <div class="absolute w-[2px] bg-brand-secondary -top-6 -bottom-6 left-1/2 -translate-x-1/2 z-0"></div>
+                <div class="relative z-10 w-6 h-6 rounded-full border-[2px] border-brand-secondary bg-brand-neutral flex items-center justify-center shrink-0">
+                  <div class="w-[14px] h-[14px] rounded-full border-[2px] border-brand-secondary bg-brand-secondary"></div>
+                </div>
+              </div>
+              <span>change fontsize on statistics mobile desc</span>
+            </div>
+
+            <!-- ITEM 5  -->
+            <div class="flex flex-row items-center justify-start gap-5">
+              <span class="text-[10px] text-brand-tertiary w-[93px] text-right shrink-0">24 Oct 2026 20:25 PM</span>
+              <div class="relative flex justify-center items-center w-6 h-6 shrink-0">
+                <div class="absolute w-[2px] bg-brand-secondary -top-6 left-1/2 -translate-x-1/2 z-0"></div>
+                <div class="relative z-10 w-6 h-6 rounded-full border-[2px] border-brand-secondary bg-brand-neutral flex items-center justify-center shrink-0">
+                  <div class="w-[14px] h-[14px] rounded-full border-[2px] border-brand-secondary bg-brand-secondary"></div>
+                </div>
+              </div>
+              <span>fix header name in navbar mobile</span>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 
