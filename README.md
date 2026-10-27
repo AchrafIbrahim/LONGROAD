@@ -1,2 +1,27 @@
 # LONGROAD
-This website created for List of frontend projects for Roadmap.sh that i worked on.
+This website created for roadmap.sh, especially frontend development projects. You can see all my projects for roadmap.sh frontend here. There is a list you can explore here. 
+
+
+## 🚀  Live Demo
+
+### Roadmap.sh Link
+
+1. [Beginner] Changelog Component, https://roadmap.sh/projects/changelog-component
+
+
+## 🛠️ How to Run Locally
+
+If you want to run this project on your local machine:
+
+1. Clone this repository:
+   `git clone https://github.com/AchrafIbrahim/LONGROAD.git`
+2. Open the project folder.
+3. Double-click `index.html` to open it in your browser. 
+   *(Alternatively, open it with VS Code Live Server).*
+
+## 🧰 Technologies Used
+- HTML5 (Semantic tags)
+- CSS3 (Flexbox, Grid, CSS Variables, Tailwind)
+- JavaScript (DOM Manipulation)
+
+
