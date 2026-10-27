@@ -9,6 +9,11 @@ This website created for roadmap.sh, especially frontend development projects. Y
 1. [Beginner] Changelog Component, https://roadmap.sh/projects/changelog-component
 
 
+## Where to find the projects?
+
+In this repository, open folder projects, there you can see all roadmap.sh frontend projects
+
+
 ## 🛠️ How to Run Locally
 
 If you want to run this project on your local machine:
