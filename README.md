@@ -11,6 +11,7 @@ https://longroad.ibrahaji01.workers.dev/
 ### Roadmap.sh Link
 
 1. [Beginner] Changelog Component, https://roadmap.sh/projects/changelog-component
+2. [Beginner] Testimonial Cards, https://roadmap.sh/projects/testimonial-cards
 
 
 ## Where to find the projects?
