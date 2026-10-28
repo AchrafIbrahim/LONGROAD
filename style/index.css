@@ -346,8 +346,8 @@ main {
 }
 
 .projects-container {
-  width: 750px;
-  /*width: 100%;*/
+  max-width: 750px;
+  width: 100%;
   padding: 50px 10px;
   display: flex;
   flex-direction: column;
@@ -440,7 +440,8 @@ footer {
 }
 
 .footer-container {
-  width: 750px;
+  max-width: 750px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -705,17 +706,45 @@ body.modal-open {
     gap: 15px;
   }
 
+  .modal {
+    width: 90%;
+  }
+
   .modal-content {
     padding: 20px;
+    gap: 15px;
+    border-width: 2px;
   }
 
   .modal-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .modal-body {
+    font-size: 0.85rem;
+    line-height: 1.4;
   }
 }
 
 /*=========== RESPONSIVE TABLET ===========*/
 @media (max-width: 768px) {
+  body {
+    padding: 20px 20px;
+  }
+
+  .projects-header {
+    gap: 25px;
+    text-align: center;
+  }
+
+  .projects-header p {
+    font-size: 0.95rem;
+  }
+
+  .projects-header img {
+    max-width: 250px;
+  }
+
   .navbar-search-container.active .navbar-input-search {
     width: 150px;
   }
@@ -723,6 +752,29 @@ body.modal-open {
   #navbar.search-active .navbar-smalllogo {
     opacity: 0;
     visibility: hidden;
+  }
+
+  .projects-card {
+    padding: 25px;
+  }
+
+  .footer-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .footer-col,
+  .footer-copyright {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-socials {
+    flex-direction: row;
+    gap: 15px;
   }
 }
 
