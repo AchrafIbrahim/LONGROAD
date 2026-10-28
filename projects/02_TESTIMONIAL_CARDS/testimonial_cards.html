@@ -132,7 +132,7 @@
           <h1 class="font-bungee text-brand-secondary text-[32px]">TESTIMONIAL CARDS</h1>
           <p>Testimonials are quotes or statements from satisfied customers or users, often used on websites to build credibility and trust.</p>
         </header>
-        <section class="flex flex-col justify-center items-center gap-[60px] p-10 border-[2px] border-brand-secondary rounded-[10px]">
+        <section class="w-full flex flex-col justify-center items-center gap-[60px] p-10">
           <!-- ================ CARD 1 ================ -->
           <div class="p-5 flex flex-col justify-center items-start gap-[10px] border-[2px] border-brand-secondary rounded-[20px] w-fit">
             <div class="font-inria text-base">
@@ -186,7 +186,31 @@
           </div>
 
           <!-- ================ CARD 4 ================ -->
-          <div></div>
+          <div class="relative w-full max-w-4xl mx-auto border-2 border-brand-secondary rounded-3xl p-10 flex flex-col items-center justify-center bg-brand-neutral overflow-hidden">
+            <div class="flex flex-col items-center justify-center min-h-[400px] w-full transition-opacity duration-300" id="content-wrapper">
+              <div class="min-h-[120px] flex items-center justify-center w-full mb-6">
+                <p id="testimonial-text" class="text-brand-secondary text-base text-center md:text-xl max-w-3xl leading-relaxed min-w-0 break-words"></p>
+              </div>
+
+              <div id="avatar-container" class="flex flex-row justify-center items-center gap-5 mb-4"></div>
+              <div class="flex flex-col justify-center items-center h-16">
+                <span id="author-name" class="text-xl text-brand-secondary font-bold"></span>
+                <span id="author-role" class="text-base text-brand-secondary"></span>
+              </div>
+            </div>
+
+            <button id="btn-prev" class="absolute left-4 top-1/2 -translate-y-1/2 p-2 hover:bg-gray-200 rounded-full z-50 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="text-brand-secondary transform scale-x-[-1]">
+                <path fill="currentColor" fill-rule="evenodd" d="M8.512 4.43a.75.75 0 0 1 1.057.082l6 7a.75.75 0 0 1 0 .976l-6 7a.75.75 0 0 1-1.138-.976L14.012 12L8.431 5.488a.75.75 0 0 1 .08-1.057" clip-rule="evenodd" />
+              </svg>
+            </button>
+
+            <button id="btn-next" class="absolute right-4 top-1/2 -translate-y-1/2 p-2 hover:bg-gray-200 rounded-full z-50 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="text-brand-secondary">
+                <path fill="currentColor" fill-rule="evenodd" d="M8.512 4.43a.75.75 0 0 1 1.057.082l6 7a.75.75 0 0 1 0 .976l-6 7a.75.75 0 0 1-1.138-.976L14.012 12L8.431 5.488a.75.75 0 0 1 .08-1.057" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
         </section>
       </div>
     </main>
@@ -394,6 +418,83 @@
       function changelogPage() {
         window.location.href = "/testimonial_cards.html";
       }
+
+      // ================ CARD 4 ================
+      const testimonials = [
+        {
+          text: "He's like a PlayStation. He can take advantage of every mistake we make. He makes the impossible possible.",
+          name: "Arsene Wenger",
+          role: "Arsenal Legendary Manager",
+          img: "img/Arsene_Wenger.jpg",
+        },
+        {
+          text: "I am Messi",
+          name: "Cristiano Ronaldo",
+          role: "B.O.A.T",
+          img: "img/Cristiano_Ronaldo.webp",
+        },
+        {
+          text: "Messi is not normal",
+          name: "Kylian Mbappe",
+          role: "Dictator",
+          img: "img/Kylian_Mbappe.webp",
+        },
+      ];
+
+      let currentIndex = 0;
+      const textEl = document.getElementById("testimonial-text");
+      const nameEl = document.getElementById("author-name");
+      const roleEl = document.getElementById("author-role");
+      const avatarContainer = document.getElementById("avatar-container");
+      const btnPrev = document.getElementById("btn-prev");
+      const btnNext = document.getElementById("btn-next");
+      const contentWrapper = document.getElementById("content-wrapper");
+
+      function renderTestimonial() {
+        contentWrapper.style.opacity = 0;
+
+        setTimeout(() => {
+          textEl.textContent = `"${testimonials[currentIndex].text}"`;
+          nameEl.textContent = testimonials[currentIndex].name;
+          roleEl.textContent = testimonials[currentIndex].role;
+
+          avatarContainer.innerHTML = "";
+
+          testimonials.forEach((item, index) => {
+            const isCenter = index === currentIndex;
+            const isLeft = index === (currentIndex - 1 + testimonials.length) % testimonials.length;
+            const isRight = index === (currentIndex + 1) % testimonials.length;
+
+            if (isCenter || isLeft || isRight) {
+              const img = document.createElement("img");
+              img.src = item.img;
+              img.alt = item.name;
+
+              img.className = `rounded-full border-2 border-brand-secondary object-cover cursor-pointer transition-all duration-300 ${isCenter ? "w-16 h-16 opacity-100 z-10" : "w-12 h-12 opacity-40 hover:opacity-70"}`;
+
+              img.addEventListener("click", () => {
+                currentIndex = index;
+                renderTestimonial();
+              });
+
+              avatarContainer.appendChild(img);
+            }
+          });
+          contentWrapper.style.opacity = 1;
+        }, 150);
+      }
+
+      btnPrev.addEventListener("click", () => {
+        currentIndex = currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1;
+        renderTestimonial();
+      });
+
+      btnNext.addEventListener("click", () => {
+        currentIndex = currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1;
+        renderTestimonial();
+      });
+
+      renderTestimonial();
     </script>
   </body>
 </html>
