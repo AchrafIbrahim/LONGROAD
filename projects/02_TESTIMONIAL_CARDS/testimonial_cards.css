@@ -102,22 +102,6 @@ footer {
   border: 1px solid #231f20;
 }
 
-.tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  height: fit-content;
-  padding: 5px 5px;
-  border-radius: 10px;
-  gap: 10px;
-}
-
-.tag-primary {
-  border: 2px solid #f7b5cd;
-  background-color: #f4f3f3;
-}
-
 /*=========== LOGO ANIMATION ===========*/
 .road-motion {
   animation: dash-up 0.65s linear infinite;
@@ -125,15 +109,8 @@ footer {
 .road-small {
   animation-name: dash-up-small;
 }
-.road-big {
-  animation-name: dash-up-big;
-}
 
 .small-logo .road-small {
-  animation-duration: 1.2s;
-}
-
-.big-logo .road-big {
   animation-duration: 1.2s;
 }
 
@@ -365,73 +342,6 @@ main {
   text-align: justify;
 }
 
-.projects-lists {
-  width: 100%;
-  padding: 10px 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
-}
-
-.projects-card {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 40px 40px;
-  background-color: rgba(255, 255, 255, 1);
-  border: 3px solid #f7b5cd;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.projects-card:hover {
-  background-color: rgba(204, 203, 204, 0.5);
-}
-
-.projects-card-img-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-  border: 2px solid #231f20;
-  border-radius: 10px;
-  background-color: #ffffff;
-}
-
-.projects-card-desc {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.projects-card-desc-title {
-  color: #231f20;
-  font-size: 1.3rem;
-}
-
-.projects-card-desc-body {
-  font-size: 1rem;
-}
-
-.projects-card-desc-createdate {
-  font-size: 1rem;
-  color: #a4a4a4;
-}
-
-.projects-card-desc-button {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 /*=========== FOOTER ===========*/
 footer {
   background-color: #ffffff;
@@ -657,30 +567,6 @@ body.modal-open {
 
   .projects-header img {
     max-width: 100px;
-  }
-
-  .projects-card {
-    padding: 20px;
-    gap: 15px;
-  }
-
-  .projects-card-img-container {
-    padding: 5px;
-  }
-
-  .projects-card-desc-title {
-    font-size: 1.1rem;
-  }
-
-  .projects-card-desc-body,
-  .projects-card-desc-createdate {
-    font-size: 0.85rem;
-  }
-
-  .projects-card-desc-button {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
   }
 
   .btn {
