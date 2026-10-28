@@ -142,7 +142,7 @@ footer {
     stroke-dashoffset: 0;
   }
   to {
-    stroke-dashoffset: 4.3309px;
+    stroke-dashoffset: -4.3309px;
   }
 }
 @keyframes dash-up-big {
@@ -150,7 +150,7 @@ footer {
     stroke-dashoffset: 0;
   }
   to {
-    stroke-dashoffset: 28.8px;
+    stroke-dashoffset: -28.8px;
   }
 }
 
