@@ -569,30 +569,6 @@ body.modal-open {
     max-width: 100px;
   }
 
-  .projects-card {
-    padding: 20px;
-    gap: 15px;
-  }
-
-  .projects-card-img-container {
-    padding: 5px;
-  }
-
-  .projects-card-desc-title {
-    font-size: 1.1rem;
-  }
-
-  .projects-card-desc-body,
-  .projects-card-desc-createdate {
-    font-size: 0.85rem;
-  }
-
-  .projects-card-desc-button {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
   .btn {
     width: 100%;
   }
