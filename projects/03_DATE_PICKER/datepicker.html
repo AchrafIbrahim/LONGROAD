@@ -131,7 +131,12 @@
           <h1 class="font-bungee text-brand-secondary text-[1.25rem] md:text-[2rem]">DATE PICKER</h1>
           <p>My Design for Date Picker. In line with my website theme</p>
         </header>
-        <section class="w-full flex flex-col justify-center items-center gap-[60px] p-6 md:p-10 border-[0px] border-brand-secondary rounded-[10px]"></section>
+        <section class="w-full flex flex-col justify-center items-center gap-[60px] p-6 md:p-10 border-[0px] border-brand-secondary rounded-[10px]">
+          <div class="w-full max-w-md flex flex-col justify-center items-start gap-2 font-inria" id="input-dob">
+            <label for="field-dob" class="w-full text-brand-secondary text-sm md:text-base font-bold">Date of Birth</label>
+            <input type="date" class="w-full px-4 py-3 border-2 border-brand-forty rounded-[10px] bg-brand-neutral text-brand-secondary font-inria outline-none transition-colors focus:border-brand-secondary" name="dob" id="field-dob" />
+          </div>
+        </section>
       </div>
     </main>
 
@@ -336,85 +341,8 @@
       });
 
       function changelogPage() {
-        window.location.href = "/testimonial_cards.html";
+        window.location.href = "/datepicker.html";
       }
-
-      // ================ CARD 4 ================
-      const testimonials = [
-        {
-          text: "He's like a PlayStation. He can take advantage of every mistake we make. He makes the impossible possible.",
-          name: "Arsene Wenger",
-          role: "Arsenal Legendary Manager",
-          img: "img/Arsene_Wenger.jpg",
-        },
-        {
-          text: "He is not normal",
-          name: "Kylian Mbappe",
-          role: "Dictator",
-          img: "img/Kylian_Mbappe.webp",
-        },
-        {
-          text: "I am the greatest",
-          name: "Cristiano Ronaldo",
-          role: "B.O.A.T",
-          img: "img/Cristiano_Ronaldo.webp",
-        },
-      ];
-
-      let currentIndex = 0;
-      const textEl = document.getElementById("testimonial-text");
-      const nameEl = document.getElementById("author-name");
-      const roleEl = document.getElementById("author-role");
-      const avatarContainer = document.getElementById("avatar-container");
-      const btnPrev = document.getElementById("btn-prev");
-      const btnNext = document.getElementById("btn-next");
-      const contentWrapper = document.getElementById("content-wrapper");
-
-      function renderTestimonial() {
-        contentWrapper.style.opacity = 0;
-
-        setTimeout(() => {
-          textEl.textContent = `"${testimonials[currentIndex].text}"`;
-          nameEl.textContent = testimonials[currentIndex].name;
-          roleEl.textContent = testimonials[currentIndex].role;
-
-          avatarContainer.innerHTML = "";
-
-          testimonials.forEach((item, index) => {
-            const isCenter = index === currentIndex;
-            const isLeft = index === (currentIndex - 1 + testimonials.length) % testimonials.length;
-            const isRight = index === (currentIndex + 1) % testimonials.length;
-
-            if (isCenter || isLeft || isRight) {
-              const img = document.createElement("img");
-              img.src = item.img;
-              img.alt = item.name;
-
-              img.className = `rounded-full border-2 border-brand-secondary object-cover cursor-pointer transition-all duration-300 ${isCenter ? "w-16 h-16 opacity-100 z-10" : "w-12 h-12 opacity-40 hover:opacity-70"}`;
-
-              img.addEventListener("click", () => {
-                currentIndex = index;
-                renderTestimonial();
-              });
-
-              avatarContainer.appendChild(img);
-            }
-          });
-          contentWrapper.style.opacity = 1;
-        }, 150);
-      }
-
-      btnPrev.addEventListener("click", () => {
-        currentIndex = currentIndex === 0 ? testimonials.length - 1 : currentIndex - 1;
-        renderTestimonial();
-      });
-
-      btnNext.addEventListener("click", () => {
-        currentIndex = currentIndex === testimonials.length - 1 ? 0 : currentIndex + 1;
-        renderTestimonial();
-      });
-
-      renderTestimonial();
     </script>
   </body>
 </html>
