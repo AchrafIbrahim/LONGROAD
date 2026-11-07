@@ -133,12 +133,12 @@
         </header>
         <section class="flex flex-col w-full mx-auto gap-6 md:gap-8 items-center inria">
           <div role="tablist" class="flex flex-row justify-start sm:justify-center items-center gap-2 md:gap-4 w-full max-w-full min-w-0 overflow-x-auto whitespace-nowrap py-2 scrollbar-none">
-            <button role="tab" class="active shrink-0 border-solid border-brand-forty hover:border-brand-secondary active:border-brand-secondary border-[1px] rounded-[10px] p-1">Avengers</button>
-            <button role="tab" class="shrink-0 border-solid border-brand-forty hover:border-brand-secondary border-[1px] rounded-[10px] p-1">New Avengers</button>
-            <button role="tab" class="shrink-0 border-solid border-brand-forty hover:border-brand-secondary border-[1px] rounded-[10px] p-1">Wakanda</button>
-            <button role="tab" class="shrink-0 border-solid border-brand-forty hover:border-brand-secondary border-[1px] rounded-[10px] p-1">Fantastic 4</button>
-            <button role="tab" class="shrink-0 border-solid border-brand-forty hover:border-brand-secondary border-[1px] rounded-[10px] p-1">X-Men</button>
-            <button role="tab" class="shrink-0 border-solid border-brand-forty hover:border-brand-secondary border-[1px] rounded-[10px] p-1">TVA</button>
+            <button role="tab" class="group active shrink-0 border-solid border-brand-forty hover:border-brand-secondary border-[1px] rounded-[10px] p-1" onclick="tabs(event, 'avengers')" id="defaultOpen">Avengers</button>
+            <button role="tab" class="group shrink-0 border-solid border-brand-forty hover:border-brand-secondary border-[1px] rounded-[10px] p-1" onclick="tabs(event, 'newavengers')">New Avengers</button>
+            <button role="tab" class="group shrink-0 border-solid border-brand-forty hover:border-brand-secondary border-[1px] rounded-[10px] p-1" onclick="tabs(event, 'wakanda')">Wakanda</button>
+            <button role="tab" class="group shrink-0 border-solid border-brand-forty hover:border-brand-secondary border-[1px] rounded-[10px] p-1" onclick="tabs(event, 'fantastic4')">Fantastic 4</button>
+            <button role="tab" class="group shrink-0 border-solid border-brand-forty hover:border-brand-secondary border-[1px] rounded-[10px] p-1" onclick="tabs(event, 'xmen')">X-Men</button>
+            <button role="tab" class="group shrink-0 border-solid border-brand-forty hover:border-brand-secondary border-[1px] rounded-[10px] p-1" onclick="tabs(event, 'tva')">TVA</button>
           </div>
           <div id="avengers" class="character-container">
             <div class="character-card">
@@ -290,7 +290,7 @@
               </div>
             </div>
           </div>
-          <div id="fantastic4">
+          <div id="fantastic4" class="character-container">
             <div>
               <div class="character-card">
                 <img src="" alt="" />
@@ -301,7 +301,7 @@
               </div>
             </div>
           </div>
-          <div id="xmen">
+          <div id="xmen" class="character-container">
             <div>
               <div class="character-card">
                 <img src="" alt="" />
@@ -530,6 +530,26 @@
             eyeClosed.classList.toggle("hidden");
           });
         });
+      });
+
+      // Tabs Function
+      function tabs(evt, team) {
+        const tabcontent = document.querySelectorAll(".character-container");
+        tabcontent.forEach((content) => {
+          content.style.display = "none";
+        });
+
+        const tablinks = document.querySelectorAll(".group");
+        tablinks.forEach((link) => {
+          link.classList.remove("active");
+        });
+
+        document.getElementById(team).style.display = "grid";
+        evt.currentTarget.classList.add("active");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("defaultOpen").click();
       });
 
       function changelogPage() {
