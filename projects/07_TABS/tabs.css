@@ -353,10 +353,10 @@ main {
 .character-card {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 20px;
-  border: 2px solid #f7b5cd;
+  border: 1px solid #231f20;
   border-radius: 10px;
   max-width: 200px;
   gap: 10px;
@@ -366,7 +366,7 @@ main {
   width: 150px;
   height: 150px;
   overflow: hidden;
-  border: 0px solid #cccbcc;
+  border: 1px solid #231f20;
   border-radius: 10px;
 }
 
@@ -665,5 +665,12 @@ body.modal-open {
   #navbar.search-active .navbar-smalllogo {
     opacity: 0;
     visibility: hidden;
+  }
+
+  .character-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    /*display: none;*/
   }
 }
