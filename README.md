@@ -15,6 +15,7 @@ https://longroad.ibrahaji01.workers.dev/
 3. [Beginner] Datepicker UI, https://roadmap.sh/projects/datepicker-ui
 4. [Beginner] Accessible Form UI, https://roadmap.sh/projects/accessible-form-ui
 5. [Beginner] Image Grid Layout, https://roadmap.sh/projects/image-grid
+6. [Beginner] Tooltip UI, https://roadmap.sh/projects/tooltip-ui
 
 
 ## Where to find the projects?
