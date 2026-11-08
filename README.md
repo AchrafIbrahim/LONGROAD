@@ -16,6 +16,7 @@ https://longroad.ibrahaji01.workers.dev/
 4. [Beginner] Accessible Form UI, https://roadmap.sh/projects/accessible-form-ui
 5. [Beginner] Image Grid Layout, https://roadmap.sh/projects/image-grid
 6. [Beginner] Tooltip UI, https://roadmap.sh/projects/tooltip-ui
+7. [Beginner] Tabs, https://roadmap.sh/projects/simple-tabs
 
 
 ## Where to find the projects?
