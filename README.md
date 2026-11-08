@@ -17,6 +17,7 @@ https://longroad.ibrahaji01.workers.dev/
 5. [Beginner] Image Grid Layout, https://roadmap.sh/projects/image-grid
 6. [Beginner] Tooltip UI, https://roadmap.sh/projects/tooltip-ui
 7. [Beginner] Tabs, https://roadmap.sh/projects/simple-tabs
+8. [Beginner] Cookie Consent, https://roadmap.sh/projects/cookie-consent
 
 
 ## Where to find the projects?
