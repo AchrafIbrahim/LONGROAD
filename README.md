@@ -19,6 +19,7 @@ https://longroad.ibrahaji01.workers.dev/
 7. [Beginner] Tabs, https://roadmap.sh/projects/simple-tabs
 8. [Beginner] Cookie Consent, https://roadmap.sh/projects/cookie-consent
 9. [Beginner] Restricted Textarea, https://roadmap.sh/projects/restricted-textarea
+10. [Beginner] Accordion, https://roadmap.sh/projects/accordion 
 
 
 ## Where to find the projects?
