@@ -378,26 +378,33 @@
         const textarea = document.getElementById("experience");
         const charCount = document.getElementById("charCount");
 
-        charCount.textContent = textarea.value.length;
-        textarea.addEventListener("input", () => {
+        if (textarea && charCount) {
           charCount.textContent = textarea.value.length;
+          textarea.addEventListener("input", (e) => {
+            charCount.textContent = textarea.value.length;
 
-          if (textarea.value.length > 250) {
-            textarea.value = textarea.value.slice(0, 250);
-          }
+            if (textarea.value.length > 250) {
+              e.preventDefault();
+              if (textarea.value.length > 250) {
+                textarea.value = textarea.value.substring(0, 250);
+              }
+            }
 
-          if (textarea.value.length === 250) {
-            textarea.classList.add("text-red-500");
-            textarea.classList.remove("text-brand-secondary");
-            textarea.classList.add("focus:border-red-500");
-            textarea.classList.remove("focus:border-brand-forty");
-          } else {
-            textarea.classList.remove("text-red-500");
-            textarea.classList.add("text-brand-secondary");
-            textarea.classList.remove("focus:border-red-500");
-            textarea.classList.add("focus:border-brand-forty");
-          }
-        });
+            charCount.textContent = textarea.value.length;
+
+            if (textarea.value.length === 250) {
+              textarea.classList.add("text-red-500");
+              textarea.classList.remove("text-brand-secondary");
+              textarea.classList.add("focus:border-red-500");
+              textarea.classList.remove("focus:border-brand-forty");
+            } else {
+              textarea.classList.remove("text-red-500");
+              textarea.classList.add("text-brand-secondary");
+              textarea.classList.remove("focus:border-red-500");
+              textarea.classList.add("focus:border-brand-forty");
+            }
+          });
+        }
       });
 
       function changelogPage() {
