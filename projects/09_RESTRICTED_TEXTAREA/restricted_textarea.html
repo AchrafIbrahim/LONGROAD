@@ -382,6 +382,10 @@
         textarea.addEventListener("input", () => {
           charCount.textContent = textarea.value.length;
 
+          if (textarea.value.length > 250) {
+            textarea.value = textarea.value.slice(0, 250);
+          }
+
           if (textarea.value.length === 250) {
             textarea.classList.add("text-red-500");
             textarea.classList.remove("text-brand-secondary");
