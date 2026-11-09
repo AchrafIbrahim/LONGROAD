@@ -131,25 +131,7 @@
           <h1 class="font-bungee text-brand-secondary text-[1.25rem] md:text-[2rem]">RESTRICTED TEXTAREA</h1>
           <p>As the user types, the character count will update dynamically. Once the limit is reached, the textarea will prevent further input, and the border will turn red to visually indicate the limit has been hit.</p>
         </header>
-        <section class="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 p-6 md:p-10 border-[0px] border-brand-secondary rounded-[10px] items-center">
-          <div class="w-full h-full p-5 flex flex-col justify-center gap-4 border-[0px] border-brand-primary rounded-[10px]">
-            <div class="flex flex-col justify-center items-center gap-3">
-              <span class="font-inria font-bold text-[1rem]">You're almost there</span>
-              <div class="w-full border-2 border-brand-secondary rounded-full">
-                <div class="w-full h-8 md:h-10 border-0 border-brand-secondary rounded-full bg-brand-neutral p-[3px]">
-                  <div class="w-full h-full bg-brand-neutral rounded-full overflow-hidden">
-                    <div class="h-full bg-brand-primary rounded-full w-[50%] transition-all duration-300"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="flex flex-col justify-center items-center font-inria font-bold text-[1rem] md:text[1.2rem] gap-2">
-              <span class="line-through">Experiences</span>
-              <span class="line-through">What do you prefer?</span>
-              <span>Create Account</span>
-              <span>Invite Friends</span>
-            </div>
-          </div>
+        <section class="w-full max-w-xl mx-auto flex flex-col justify-center items-center gap-6 md:gap-8 p-6 md:p-10 border-[0px] border-brand-secondary rounded-[10px]">
           <div class="w-full flex flex-col gap-4 font-inria justify-center items-start">
             <div class="w-full flex flex-col justify-center items-start gap-2 font-inria" id="input-name">
               <label for="field-name" class="w-full text-brand-secondary text-sm md:text-base font-bold">Name</label>
@@ -158,7 +140,7 @@
                 class="w-full px-4 py-3 border-2 border-brand-forty rounded-[10px] bg-brand-neutral text-brand-secondary font-inria outline-none transition-colors focus:border-brand-secondary"
                 name="name"
                 id="field-name"
-                placeholder="Name"
+                placeholder="Your full name"
               />
             </div>
             <div class="w-full flex flex-col justify-center items-start gap-2 font-inria" id="input-name">
@@ -168,62 +150,24 @@
                 class="w-full px-4 py-3 border-2 border-brand-forty rounded-[10px] bg-brand-neutral text-brand-secondary font-inria outline-none transition-colors focus:border-brand-secondary"
                 name="email"
                 id="field-email"
-                placeholder="Email"
+                placeholder="johndoe@gmail.com"
               />
             </div>
-            <div class="w-full flex flex-col justify-center items-start gap-2 font-inria" id="input-password">
-              <label for="field-password" class="w-full text-brand-secondary text-sm md:text-base font-bold">Password</label>
-              <div class="relative flex items-center w-full password-wrapper">
-                <input
-                  type="password"
-                  class="w-full px-4 py-3 border-2 border-brand-forty rounded-[10px] bg-brand-neutral text-brand-secondary font-inria outline-none transition-colors focus:border-brand-secondary"
-                  name="password"
-                  id="field-password"
-                  placeholder="Password"
-                />
-                <button type="button" id="toggle-password" class="absolute right-4 text-brand-tertiary hover:text-brand-secondary focus:outline-noe transition-colors toggle-password-btn" aria-label="Toggle Password Visibility">
-                  <svg id="eye-open" class="eye-open w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                  </svg>
-                  <svg id="eye-closed" class="eye-closed w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
-                    ></path>
-                  </svg>
-                </button>
+            <div class="w-full flex flex-col justify-center items-start gap-2 font-inria" id="input-name">
+              <label for="field-name" class="w-full text-brand-secondary text-sm md:text-base font-bold">Experience</label>
+              <div class="relative w-full">
+                <textarea
+                  name="experience"
+                  id="experience"
+                  maxlength="250"
+                  placeholder="Maksimal 250 karakter"
+                  class="min-h-[120px] md:min-h-[160px] w-full px-4 py-3 border-2 border-brand-forty rounded-[10px] bg-brand-neutral text-brand-secondary font-inria outline-none transition-colors focus:border-brand-secondary overflow-auto"
+                >
+                </textarea>
+                <div class="absolute bottom-3 right-4 text-xs md:text-sm text-brand-tertiary pointer-events-none"><span id="charCount">0</span>/250</div>
               </div>
             </div>
-            <div class="w-full flex flex-col justify-center items-start gap-2 font-inria" id="input-confirmpassword">
-              <label for="field-confirmpassword" class="w-full text-brand-secondary text-sm md:text-base font-bold">Confirm Password</label>
-              <div class="relative flex items-center w-full password-wrapper">
-                <input
-                  type="password"
-                  class="w-full px-4 py-3 border-2 border-brand-forty rounded-[10px] bg-brand-neutral text-brand-secondary font-inria outline-none transition-colors focus:border-brand-secondary"
-                  name="confirmpassword"
-                  id="field-confirmpassword"
-                  placeholder="Confirm Password"
-                />
-                <button type="button" id="toggle-password" class="absolute right-4 text-brand-tertiary hover:text-brand-secondary focus:outline-noe transition-colors toggle-password-btn" aria-label="Toggle Password Visibility">
-                  <svg id="eye-open" class="eye-open w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                  </svg>
-                  <svg id="eye-closed" class="eye-closed w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary" id="projects-btn-view" onclick="">Create Account</button>
+            <button type="submit" class="btn btn-primary" id="projects-btn-view" onclick="">Submit</button>
           </div>
         </section>
       </div>
@@ -429,24 +373,27 @@
         });
       });
 
+      // ================ CHAR COUNT EXPERIENCE FIELD ================
       document.addEventListener("DOMContentLoaded", () => {
-        const toggleButtons = document.querySelectorAll(".toggle-password-btn");
-        toggleButtons.forEach((button) => {
-          button.addEventListener("click", function () {
-            const wrapper = this.closest(".password-wrapper");
-            const input = wrapper.querySelector("input");
-            const eyeOpen = this.querySelector(".eye-open");
-            const eyeClosed = this.querySelector(".eye-closed");
-            const isPassword = input.type === "password";
-            input.type = isPassword ? "text" : "password";
-            eyeOpen.classList.toggle("hidden");
-            eyeClosed.classList.toggle("hidden");
-          });
+        const textarea = document.getElementById("experience");
+        const charCount = document.getElementById("charCount");
+
+        charCount.textContent = textarea.value.length;
+        textarea.addEventListener("input", () => {
+          charCount.textContent = textarea.value.length;
+
+          if (textarea.value.length === 250) {
+            textarea.classList.add("focus:border-red-500");
+            textarea.classList.remove("focus:border-brand-forty");
+          } else {
+            textarea.classList.remove("focus:border-red-500");
+            textarea.classList.add("focus:border-brand-forty");
+          }
         });
       });
 
       function changelogPage() {
-        window.location.href = "/formui.html";
+        window.location.href = "/restricted_textarea.html";
       }
     </script>
   </body>
