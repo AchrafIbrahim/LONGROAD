@@ -131,7 +131,27 @@
           <h1 class="font-bungee text-brand-secondary text-[1.25rem] md:text-[2rem]">AGE CALCULATOR</h1>
           <p>A Calculator tells how old are you based on your birth date.</p>
         </header>
-        <section class="w-full max-w-2xl mx-auto flex flex-col justify-center items-center gap-2 md:gap-4 p-6 md:p-10 border-[0px] border-brand-secondary rounded-[10px]"></section>
+        <section class="w-full max-w-2xl mx-auto flex flex-col justify-center items-center gap-2 md:gap-4 p-6 md:p-10 border-[0px] border-brand-secondary rounded-[10px]">
+          <div class="w-full flex flex-col gap-4 font-inria justify-center items-start">
+            <div class="w-full flex flex-col justify-center items-start gap-2 font-inria" id="input-name">
+              <label for="field-birth-date" class="w-full text-brand-secondary text-sm md:text-base font-bold">Enter your birth date:</label>
+              <input
+                type="date"
+                class="w-full px-4 py-3 border-2 border-brand-forty rounded-[10px] bg-brand-neutral text-brand-secondary font-inria outline-none transition-colors focus:border-brand-secondary"
+                name="field-birth-date"
+                id="field-birth-date"
+              />
+            </div>
+            <div class="btn btn-primary cursor-pointer">
+              <button type="button" id="calc-btn">Calculate</button>
+            </div>
+          </div>
+          <div class="w-full h-full p-5 flex flex-col justify-center gap-4 border-[0px] border-brand-primary rounded-[10px]">
+            <div class="flex flex-col justify-center items-center gap-3 pt-6 pb-2">
+              <span id="currentAge" class="font-inria font-bold text-[1rem]"></span>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 
@@ -332,6 +352,50 @@
             searchContainer.classList.remove("active");
             navbar.classList.remove("search-active");
           }
+        });
+      });
+
+      // ================ CALCULATE AGE ================
+      document.addEventListener("DOMContentLoaded", () => {
+        const birthdateInput = document.getElementById("field-birth-date");
+        const calcBtn = document.getElementById("calc-btn");
+        const resultText = document.getElementById("currentAge");
+
+        function getAge(dateString) {
+          const today = new Date();
+          const birthDate = new Date(dateString);
+
+          let years = today.getFullYear() - birthDate.getFullYear();
+          let months = today.getMonth() - birthDate.getMonth();
+          let days = today.getDate() - birthDate.getDate();
+
+          if (days < 0) {
+            months--;
+            const previousMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+            days += previousMonth.getDate();
+          }
+
+          if (months < 0) {
+            years--;
+            months += 12;
+          }
+
+          return { years, months, days };
+        }
+
+        calcBtn.addEventListener("click", () => {
+          const birthdateValue = birthdateInput.value;
+          if (!birthdateValue) {
+            alert("Please enter your birth date");
+            return;
+          }
+
+          const age = getAge(birthdateValue);
+          const yearText = `${age.years} year${age.years !== 1 ? "s" : ""}`;
+          const monthText = `${age.months} month${age.months !== 1 ? "s" : ""}`;
+          const dayText = `${age.days} day${age.days !== 1 ? "s" : ""}`;
+
+          resultText.innerText = `Your age is ${yearText}, ${monthText}, and ${dayText} old.`;
         });
       });
 
