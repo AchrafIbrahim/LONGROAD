@@ -21,6 +21,7 @@ https://longroad.ibrahaji01.workers.dev/
 9. [Beginner] Restricted Textarea, https://roadmap.sh/projects/restricted-textarea
 10. [Beginner] Accordion, https://roadmap.sh/projects/accordion
 11. [Beginner] Age Calculator, https://roadmap.sh/projects/age-calculator
+12. [Beginner] Flashcard, https://roadmap.sh/projects/flash-cards
 
 
 ## Where to find the projects?
