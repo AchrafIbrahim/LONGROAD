@@ -134,7 +134,7 @@
             be open at a time, keeping the UI clean and organized.
           </p>
         </header>
-        <section class="w-full max-w-2xl mx-auto flex flex-col justify-center items-center gap-6 md:gap-8 p-6 md:p-10 border-[1px] border-brand-secondary rounded-[10px] font-inria">
+        <section class="w-full max-w-2xl mx-auto flex flex-col justify-center items-center gap-6 md:gap-8 p-6 md:p-10 border-[0px] border-brand-secondary rounded-[10px] font-inria">
           <!--PROGRESS BAR-->
           <div class="w-full max-w-md mx-auto flex flex-col items-center gap-2">
             <span id="progress-text" class="font-bold text-sm md:text-md lg:text-lg">Question 1 of </span>
@@ -145,21 +145,17 @@
 
           <!--CARD-->
           <div id="flashcard-container" class="relative w-full h-72 md:h-80 cursor-pointer [perspective:1000px]">
-            <!-- Inner Card (Yang akan diputar) -->
             <div id="flashcard-inner" class="relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d]">
-              <!-- SISI DEPAN (Question) -->
+              <!-- QUESTION -->
               <div class="absolute inset-0 bg-white border-2 border-brand-secondary rounded-xl flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden] shadow-sm">
                 <div class="mb-4 text-brand-secondary font-bold tracking-widest uppercase text-sm">Question</div>
-                <!-- ID untuk JS mengganti pertanyaan -->
                 <div id="card-question" class="text-xl md:text-2xl font-bold text-brand-secondary">Whats Thor's hammer name?</div>
               </div>
 
-              <!-- SISI BELAKANG (Answer) -->
-              <!-- rotateY(180deg) agar menghadap ke belakang -->
-              <div class="absolute inset-0 bg-brand-secondary border-2 border-brand-secondary rounded-xl flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                <div class="mb-4 text-brand-neutral/70 font-bold tracking-widest uppercase text-sm">Answer</div>
-                <!-- ID untuk JS mengganti jawaban -->
-                <div id="card-answer" class="text-xl md:text-2xl font-bold text-white">Jonathan</div>
+              <!-- ANSWER -->
+              <div class="absolute inset-0 bg-brand-primary border-2 border-brand-secondary rounded-xl flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                <div class="mb-4 text-brand-secondary/70 font-bold tracking-widest uppercase text-sm">Answer</div>
+                <div id="card-answer" class="text-xl md:text-2xl font-bold text-brand-secondary">Jonathan</div>
               </div>
             </div>
           </div>
@@ -397,6 +393,86 @@
           }
         });
       });
+
+      // ================ FLASH CARD ================
+      const flashcards = [
+        {
+          question: "What's the name of Odin's spear?",
+          answer: "Gungnir",
+        },
+        {
+          question: "How long exactly does steve roger frozen?",
+          answer: "66 years",
+        },
+        {
+          question: "Who's the first AI ever created?",
+          answer: "Jim Hammond",
+        },
+      ];
+
+      let currentIndex = 0;
+      let isFlipped = false;
+
+      const cardInner = document.getElementById("flashcard-inner");
+      const cardQuestion = document.getElementById("card-question");
+      const cardAnswer = document.getElementById("card-answer");
+      const progressText = document.getElementById("progress-text");
+      const progressFill = document.getElementById("progress-fill");
+      const navCounter = document.getElementById("nav-counter");
+      const btnPrev = document.getElementById("btn-prev");
+      const btnNext = document.getElementById("btn-next");
+      const flashcardContainer = document.getElementById("flashcard-container");
+
+      function renderCard() {
+        if (isFlipped) {
+          cardInner.style.transform = "rotateY(180deg)";
+        } else {
+          cardInner.style.transform = "rotateY(0deg)";
+        }
+      }
+
+      function changeCard(direction) {
+        if (direction === "next" && currentIndex < flashcards.length - 1) {
+          currentIndex++;
+        } else if (direction === "prev" && currentIndex > 0) {
+          currentIndex--;
+        } else {
+          return;
+        }
+
+        isFlipped = false;
+        cardInner.style.transform = "rotateY(0deg)";
+
+        setTimeout(() => {
+          cardQuestion.innerText = flashcards[currentIndex].question;
+          cardAnswer.innerText = flashcards[currentIndex].answer;
+
+          progressText.innerText = `Question ${currentIndex + 1} of ${flashcards.length}`;
+          navCounter.innerText = `${currentIndex + 1}/${flashcards.length}`;
+          progressFill.style.width = `${((currentIndex + 1) / flashcards.length) * 100}%`;
+
+          btnPrev.disabled = currentIndex === 0;
+          btnNext.disabled = currentIndex === flashcards.length - 1;
+          btnPrev.classList.toggle("opacity-50", currentIndex === 0);
+          btnNext.classList.toggle("opacity-50", currentIndex === flashcards.length - 1);
+        }, 500);
+      }
+
+      flashcardContainer.addEventListener("click", () => {
+        isFlipped = !isFlipped;
+        renderCard();
+      });
+
+      btnNext.addEventListener("click", () => changeCard("next"));
+      btnPrev.addEventListener("click", () => changeCard("prev"));
+
+      cardQuestion.innerText = flashcards[currentIndex].question;
+      cardAnswer.innerText = flashcards[currentIndex].answer;
+      progressText.innerText = `Question 1 of ${flashcards.length}`;
+      navCounter.innerText = `1/${flashcards.length}`;
+      progressFill.style.width = `${(1 / flashcards.length) * 100}%`;
+      btnPrev.disabled = true;
+      btnPrev.classList.add("opacity-50");
 
       function changelogPage() {
         window.location.href = "/accordion.html";
