@@ -134,7 +134,7 @@
             be open at a time, keeping the UI clean and organized.
           </p>
         </header>
-        <section class="w-full max-w-2xl mx-auto flex flex-col justify-center items-center gap-2 md:gap-4 p-6 md:p-10 border-[1px] border-brand-secondary rounded-[10px] font-inria">
+        <section class="w-full max-w-2xl mx-auto flex flex-col justify-center items-center gap-6 md:gap-8 p-6 md:p-10 border-[1px] border-brand-secondary rounded-[10px] font-inria">
           <!--PROGRESS BAR-->
           <div class="w-full max-w-md mx-auto flex flex-col items-center gap-2">
             <span id="progress-text" class="font-bold text-sm md:text-md lg:text-lg">Question 1 of </span>
@@ -151,7 +151,7 @@
               <div class="absolute inset-0 bg-white border-2 border-brand-secondary rounded-xl flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden] shadow-sm">
                 <div class="mb-4 text-brand-secondary font-bold tracking-widest uppercase text-sm">Question</div>
                 <!-- ID untuk JS mengganti pertanyaan -->
-                <div id="card-question" class="text-xl md:text-2xl font-bold text-brand-secondary">What does HTML stand for?</div>
+                <div id="card-question" class="text-xl md:text-2xl font-bold text-brand-secondary">Whats Thor's hammer name?</div>
               </div>
 
               <!-- SISI BELAKANG (Answer) -->
@@ -159,19 +159,41 @@
               <div class="absolute inset-0 bg-brand-secondary border-2 border-brand-secondary rounded-xl flex flex-col items-center justify-center p-6 text-center [backface-visibility:hidden] [transform:rotateY(180deg)]">
                 <div class="mb-4 text-brand-neutral/70 font-bold tracking-widest uppercase text-sm">Answer</div>
                 <!-- ID untuk JS mengganti jawaban -->
-                <div id="card-answer" class="text-xl md:text-2xl font-bold text-white">HyperText Markup Language</div>
+                <div id="card-answer" class="text-xl md:text-2xl font-bold text-white">Jonathan</div>
               </div>
             </div>
           </div>
 
-          <span class="text-xs text-gray-500 -mt-4">Click card to flip</span>
-
           <!--NAVIGATION-->
-          <div class="flex justify-between items-center w-full max-w-sm mt-2">
-            <button id="btn-prev" class="px-4 py-2 border-2 border-brand-secondary rounded-lg font-bold hover:bg-brand-neutral transition-colors cursor-pointer">&larr; Prev</button>
-            <span id="nav-counter" class="font-bold text-sm">1 / 3</span>
-            <button id="btn-next" class="px-4 py-2 border-2 border-brand-secondary rounded-lg font-bold hover:bg-brand-neutral transition-colors cursor-pointer">Next &rarr;</button>
+          <div class="flex flex-row justify-center items-center w-full max-w-sm mt-2 gap-10">
+            <button id="btn-prev" class="btn btn-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <title>arrow-left-outline</title>
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M10.5303 5.46967C10.8232 5.76256 10.8232 6.23744 10.5303 6.53033L5.81066 11.25H20C20.4142 11.25 20.75 11.5858 20.75 12C20.75 12.4142 20.4142 12.75 20 12.75H5.81066L10.5303 17.4697C10.8232 17.7626 10.8232 18.2374 10.5303 18.5303C10.2374 18.8232 9.76256 18.8232 9.46967 18.5303L3.46967 12.5303C3.17678 12.2374 3.17678 11.7626 3.46967 11.4697L9.46967 5.46967C9.76256 5.17678 10.2374 5.17678 10.5303 5.46967Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              Prev
+            </button>
+            <span id="nav-counter" class="font-bold text-sm">1/3</span>
+            <button id="btn-next" class="btn btn-primary">
+              Next
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                <title>arrow-right-outline</title>
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M13.4697 5.46967C13.7626 5.17678 14.2374 5.17678 14.5303 5.46967L20.5303 11.4697C20.8232 11.7626 20.8232 12.2374 20.5303 12.5303L14.5303 18.5303C14.2374 18.8232 13.7626 18.8232 13.4697 18.5303C13.1768 18.2374 13.1768 17.7626 13.4697 17.4697L18.1893 12.75H4C3.58579 12.75 3.25 12.4142 3.25 12C3.25 11.5858 3.58579 11.25 4 11.25H18.1893L13.4697 6.53033C13.1768 6.23744 13.1768 5.76256 13.4697 5.46967Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
           </div>
+
+          <span class="text-xs text-gray-500 -mt-2">Click card to flip</span>
         </section>
       </div>
     </main>
