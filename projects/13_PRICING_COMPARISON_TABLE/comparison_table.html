@@ -131,7 +131,42 @@
           <h1 class="font-bungee text-brand-secondary text-[1.25rem] md:text-[2rem]">PRICING COMPARISON TABLE</h1>
           <p>Comparison table of pricing list. Made by HTML and Tailwind CSS.</p>
         </header>
-        <section class="w-full max-w-2xl mx-auto flex flex-col justify-center items-center gap-6 md:gap-8 p-6 md:p-10 border-[0px] border-brand-secondary rounded-[10px] font-inria"></section>
+        <section class="w-full max-w-2xl mx-auto flex flex-col justify-center items-center gap-6 md:gap-8 p-6 md:p-10 border-[0px] border-brand-secondary rounded-[10px] font-inria">
+          <div class="w-full overflow-x-auto rounded-lg border-2 border-brand-secondary shadow-sm">
+            <table class="w-full text-sm md:text-base text-left whitespace-nowrap">
+              <thead class="bg-brand-primary text-brand-secondary">
+                <tr>
+                  <th class="px-4 py-3 border-r-2 md:px-6 font-bold">Plan</th>
+                  <th class="px-4 py-3 border-r-2 md:px-6 font-bold">Storage</th>
+                  <th class="px-4 py-3 border-r-2 md:px-6 font-bold">Projects</th>
+                  <th class="px-4 py-3 md:px-6 font-bold">Support</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-brand-secondary/20">
+                <tr class="hover:bg-brand-neutral transition-colors">
+                  <td class="px-4 py-3 border-r-2 md:px-6 font-bold">Free</td>
+                  <td class="px-4 py-3 border-r-2 md:px-6">5 GB</td>
+                  <td class="px-4 py-3 border-r-2 md:px-6">3</td>
+                  <td class="px-4 py-3 md:px-6 text-brand-secondary">Email</td>
+                </tr>
+                <tr class="hover:bg-brand-neutral transition-colors">
+                  <td class="px-4 py-3 border-r-2 md:px-6 font-bold">Pro</td>
+                  <td class="px-4 py-3 border-r-2 md:px-6">100 GB</td>
+                  <td class="px-4 py-3 border-r-2 md:px-6">25</td>
+                  <td class="px-4 py-3 md:px-6 text-brand-secondary">Priority Email</td>
+                </tr>
+                <tr class="hover:bg-brand-neutral transition-colors">
+                  <td class="px-4 py-3 border-r-2 md:px-6 font-bold">Business</td>
+                  <td class="px-4 py-3 border-r-2 md:px-6">1 TB</td>
+                  <td class="px-4 py-3 border-r-2 md:px-6">Unlimited</td>
+                  <td class="px-4 py-3 md:px-6 text-brand-secondary">24/7 Phone</td>
+                </tr>
+              </tbody>
+
+              <tr></tr>
+            </table>
+          </div>
+        </section>
       </div>
     </main>
 
