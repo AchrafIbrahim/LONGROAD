@@ -22,6 +22,7 @@ https://longroad.ibrahaji01.workers.dev/
 10. [Beginner] Accordion, https://roadmap.sh/projects/accordion
 11. [Beginner] Age Calculator, https://roadmap.sh/projects/age-calculator
 12. [Beginner] Flashcard, https://roadmap.sh/projects/flash-cards
+13. [Beginner] Pricing Comparison Table, https://roadmap.sh/projects/pricing-comparison-table
 
 
 ## Where to find the projects?
